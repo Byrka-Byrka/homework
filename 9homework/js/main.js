@@ -31,12 +31,19 @@ if (giveBlockName) {
                 console.log(blockName + '__' + elementName + '_' + modifierName);
             } else {
                 console.log(blockName + '__' + elementName);
-            }
+            };
         } else {
-        console.log (blockName);
+            let giveModifierName = confirm('Want to enter a modifier name?');
+            if(giveModifierName){
+                let modifierName = prompt('Enter a modifier name');
+                console.log(blockName + '_' + modifierName);
+            }else{
+                console.log (blockName);
+            };
+    
         };
 } else {
-confirm('the element is not assigned a class');
+    confirm('the element is not assigned a class');
 };
 
 let theFirstNumber = Number(prompt('Enter first number'));
@@ -50,4 +57,4 @@ if (orithmeticOperation == 'div'){
     console.log(theFirstNumber * theSecondNumber);
 } else if(orithmeticOperation == 'minus'){
     console.log(theFirstNumber - theSecondNumber);
-}
+};
