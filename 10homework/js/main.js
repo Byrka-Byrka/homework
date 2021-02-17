@@ -46,10 +46,10 @@
 
 
 
-let firstNumber = Number (prompt('Enter first number'));
-let secondNumber = Number (prompt('Enter second number'));
-let thirdNumber = Number (prompt('Enter third number'));
-(String(firstNumber + secondNumber + thirdNumber) == 'NaN')? alert('NOT A NUMBER') : alert(firstNumber + secondNumber + thirdNumber);
+// let firstNumber = Number (prompt('Enter first number'));
+// let secondNumber = Number (prompt('Enter second number'));
+// let thirdNumber = Number (prompt('Enter third number'));
+// (String(firstNumber + secondNumber + thirdNumber) == 'NaN')? alert('NOT A NUMBER') : alert(firstNumber + secondNumber + thirdNumber);
 
 
 
@@ -91,8 +91,10 @@ switch(numberOfUser){
     case '9':
         alert('nine');
         break;  
-    case (isNaN):
-        alert('its not a number');
     default:
-        alert('неверное число');     
+    if (isNaN){
+        alert('its not a number');
+    } else{
+        alert('неверное число');    
+    };  
 }
