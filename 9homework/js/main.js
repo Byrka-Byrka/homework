@@ -5,7 +5,7 @@ alert(userData);
 let firstNumber = Number (prompt('Enter first number'));
 let secondNumber = Number (prompt('Enter second number'));
 let thirdNumber = Number (prompt('Enter third number'));
-if(String(firstNumber + secondNumber + thirdNumber) == 'NoN') {
+if(String(firstNumber + secondNumber + thirdNumber) == 'NaN') {
     alert('NOT A NUMBER');
 } else {
     alert(firstNumber + secondNumber + thirdNumber);

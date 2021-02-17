@@ -1,10 +1,10 @@
 'use strict'
-// let userName = prompt ('enter your name', 'C-3');
-// let userSurname = prompt ('enter your surname', 'PO');
-// let userLogin = prompt ('enter your nickname', 'KIBORG_YBIJZA');
-// (userName && userSurname && userLogin) ? alert ('let the force be with you ' + userName + ' ' + userSurname + ' ' + userLogin) : (userName && userSurname && (userLogin == null)) ? alert ('let the force be with you ' + userName + ' ' + userSurname) : ((userName == null) && userSurname && userLogin) ? alert('let the force be with you ' + userLogin) : (userName && (userSurname == null) && userLogin) ? alert('let the force be with you ' + userName): (userName && (userSurname == null && userLogin == null)) ? alert('hello ' + userName) : alert ('Hi Noname');
+let userName = prompt ('enter your name', 'C-3');
+let userSurname = prompt ('enter your surname', 'PO');
+let userLogin = prompt ('enter your nickname', 'KIBORG_YBIJZA');
+(userName && userSurname && userLogin) ? alert ('let the force be with you ' + userName + ' ' + userSurname + ' ' + userLogin) : (userName && userSurname && (userLogin == null)) ? alert ('let the force be with you ' + userName + ' ' + userSurname) : ((userName == null) && userSurname && userLogin) ? alert('let the force be with you ' + userLogin) : (userName && (userSurname == null) && userLogin) ? alert('let the force be with you ' + userName): (userName && (userSurname == null && userLogin == null)) ? alert('hello ' + userName) : alert ('Hi Noname');
 
-// специально делал через '?'
+
 
 
 
@@ -41,15 +41,36 @@
 //     alert('к несчастью это не цыхры а латинские буквы, попробуй ещё')
 // };
 
-// что-то не работало, уточню на паре, поэтому не удалил
-// (userNumber < 101 )? moreThen100 = ' меньше 100' : (userNumber % 2 != 0)? multipleOf2 = ' нечетное' : (userNumber < 0 )? positive = ' отрицательное' : ((userNumber % 1) != 0) ? fractional = ' дробное' : fractional = ' целое';
+// let userNumber = prompt('enter any number');
+// let moreThen100 ;
+// let multipleOf2 ;
+// let positive ;
+// let fractional ;
+// var isRus = function (text) {
+//     return /[а-я]/i.test(text);
+// };
+// var isEng = function (text) {
+//     return /[a-z]/i.test(text);
+// };
+// (userNumber < 100 )? moreThen100 = ' меньше 100' : (userNumber == 100 )? moreThen100 = ' равно 100' : moreThen100 = ' больше 100';
+// (userNumber % 2 != 0)? multipleOf2 = ' нечетное' : multipleOf2 = ' четное';
+// (userNumber < 0 )? positive = ' отрицательное' : (userNumber == 0 )? positive = ' равно 0' : positive = ' положительное';
+// ((userNumber % 1) != 0) ? fractional = ' дробное' : fractional = ' целое';
+// if (isNaN(userNumber)==false){
+//     alert (userNumber + moreThen100 + multipleOf2 + positive + fractional);
+// } else if (isRus(userNumber)) {
+//     alert('это не число, это russian лангуаге');
+// } else if (isEng(userNumber)){
+//     alert('к несчастью это не цыхры а латинские буквы, попробуй ещё')
+// };
 
 
 
-let firstNumber = Number (prompt('Enter first number'));
-let secondNumber = Number (prompt('Enter second number'));
-let thirdNumber = Number (prompt('Enter third number'));
-(String(firstNumber + secondNumber + thirdNumber) == 'NaN')? alert('NOT A NUMBER') : alert(firstNumber + secondNumber + thirdNumber);
+
+// let firstNumber = Number (prompt('Enter first number'));
+// let secondNumber = Number (prompt('Enter second number'));
+// let thirdNumber = Number (prompt('Enter third number'));
+// (String(firstNumber + secondNumber + thirdNumber) == 'NaN')? alert('NOT A NUMBER') : alert(firstNumber + secondNumber + thirdNumber);
 
 
 
@@ -90,5 +111,11 @@ let thirdNumber = Number (prompt('Enter third number'));
 //         break;  
 //     case '9':
 //         alert('nine');
-//         break;         
-// }
+//         break;
+//     default:
+//         if(isNaN(numberOfUser)){
+//             alert('its not a number');
+//         } else {
+//             alert('wrong number');
+//         };
+// };
