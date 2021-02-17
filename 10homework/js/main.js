@@ -1,10 +1,10 @@
 'use strict'
-// let userName = prompt ('enter your name', 'C-3');
-// let userSurname = prompt ('enter your surname', 'PO');
-// let userLogin = prompt ('enter your nickname', 'KIBORG_YBIJZA');
-// (userName && userSurname && userLogin) ? alert ('let the force be with you ' + userName + ' ' + userSurname + ' ' + userLogin) : (userName && userSurname && (userLogin == null)) ? alert ('let the force be with you ' + userName + ' ' + userSurname) : ((userName == null) && userSurname && userLogin) ? alert('let the force be with you ' + userLogin) : (userName && (userSurname == null) && userLogin) ? alert('let the force be with you ' + userName): (userName && (userSurname == null && userLogin == null)) ? alert('hello ' + userName) : alert ('Hi Noname');
+let userName = prompt ('enter your name', 'C-3');
+let userSurname = prompt ('enter your surname', 'PO');
+let userLogin = prompt ('enter your nickname', 'KIBORG_YBIJZA');
+(userName && userSurname && userLogin) ? alert ('let the force be with you ' + userName + ' ' + userSurname + ' ' + userLogin) : (userName && userSurname && (userLogin == null)) ? alert ('let the force be with you ' + userName + ' ' + userSurname) : ((userName == null) && userSurname && userLogin) ? alert('let the force be with you ' + userLogin) : (userName && (userSurname == null) && userLogin) ? alert('let the force be with you ' + userName): (userName && (userSurname == null && userLogin == null)) ? alert('hello ' + userName) : alert ('Hi Noname');
 
-// специально делал через '?'
+
 
 
 
@@ -41,11 +41,35 @@
 //     alert('к несчастью это не цыхры а латинские буквы, попробуй ещё')
 // };
 
-// что-то не работало, уточню на паре, поэтому не удалил
-// (userNumber < 101 )? moreThen100 = ' меньше 100' : (userNumber % 2 != 0)? multipleOf2 = ' нечетное' : (userNumber < 0 )? positive = ' отрицательное' : ((userNumber % 1) != 0) ? fractional = ' дробное' : fractional = ' целое';
+// let userNumber = prompt('enter any number');
+// let moreThen100 ;
+// let multipleOf2 ;
+// let positive ;
+// let fractional ;
+// var isRus = function (text) {
+//     return /[а-я]/i.test(text);
+// };
+// var isEng = function (text) {
+//     return /[a-z]/i.test(text);
+// };
+// (userNumber < 100 )? moreThen100 = ' меньше 100' : (userNumber == 100 )? moreThen100 = ' равно 100' : moreThen100 = ' больше 100';
+// (userNumber % 2 != 0)? multipleOf2 = ' нечетное' : multipleOf2 = ' четное';
+// (userNumber < 0 )? positive = ' отрицательное' : (userNumber == 0 )? positive = ' равно 0' : positive = ' положительное';
+// ((userNumber % 1) != 0) ? fractional = ' дробное' : fractional = ' целое';
+// if (isNaN(userNumber)==false){
+//     alert (userNumber + moreThen100 + multipleOf2 + positive + fractional);
+// } else if (isRus(userNumber)) {
+//     alert('это не число, это russian лангуаге');
+// } else if (isEng(userNumber)){
+//     alert('к несчастью это не цыхры а латинские буквы, попробуй ещё')
+// };
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 57e139d7f34c2afdf9b2d418c271f1fd7bc8721d
 // let firstNumber = Number (prompt('Enter first number'));
 // let secondNumber = Number (prompt('Enter second number'));
 // let thirdNumber = Number (prompt('Enter third number'));
@@ -59,6 +83,47 @@
 // (userAge >17)? alert('hello ' + nameOfUser) : alert('Goodbye ' + nameOfUser);
 
 
+<<<<<<< HEAD
+// let numberOfUser = prompt('enter a number from 0 to 9');
+// switch(numberOfUser){
+//     case '0':
+//         alert('zero');
+//         break;
+//     case '1':
+//         alert('one');
+//         break;
+//     case '2':
+//         alert('two');
+//         break;
+//     case '3':
+//         alert('three');
+//         break;
+//     case '4':
+//         alert('four');
+//         break;
+//     case '5':
+//         alert('five');
+//         break;        
+//     case '6':
+//         alert('six');
+//         break;
+//     case '7':
+//         alert('seven');
+//         break;        
+//     case '8':
+//         alert('eight');
+//         break;  
+//     case '9':
+//         alert('nine');
+//         break;
+//     default:
+//         if(isNaN(numberOfUser)){
+//             alert('its not a number');
+//         } else {
+//             alert('wrong number');
+//         };
+// };
+=======
 let numberOfUser = prompt('enter a number from 0 to 9');
 switch(numberOfUser){
     case '0':
@@ -92,9 +157,15 @@ switch(numberOfUser){
         alert('nine');
         break;  
     default:
+<<<<<<< HEAD
     if (isNaN){
         alert('its not a number');
     } else{
         alert('неверное число');    
     };  
 }
+=======
+        alert('неверное число');     
+}
+>>>>>>> 3842869551819b8c1e5074ae86e298914957d53c
+>>>>>>> 57e139d7f34c2afdf9b2d418c271f1fd7bc8721d

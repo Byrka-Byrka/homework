@@ -2,6 +2,16 @@
 // let userData = prompt('Enter something');
 // alert(userData);
 
+<<<<<<< HEAD
+let firstNumber = Number (prompt('Enter first number'));
+let secondNumber = Number (prompt('Enter second number'));
+let thirdNumber = Number (prompt('Enter third number'));
+if(String(firstNumber + secondNumber + thirdNumber) == 'NaN') {
+    alert('NOT A NUMBER');
+} else {
+    alert(firstNumber + secondNumber + thirdNumber);
+};
+=======
 // let firstNumber = Number (prompt('Enter first number'));
 // let secondNumber = Number (prompt('Enter second number'));
 // let thirdNumber = Number (prompt('Enter third number'));
@@ -10,6 +20,7 @@
 // } else {
 //     alert(firstNumber + secondNumber + thirdNumber);
 // };
+>>>>>>> 3842869551819b8c1e5074ae86e298914957d53c
 
 // let userName = prompt('Enter your name');
 // let userAge = prompt('Enter your age');
