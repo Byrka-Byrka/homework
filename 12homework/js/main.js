@@ -1,25 +1,20 @@
 'use strict'
-function sumOfThreeParameters(firstParameter = 0, secondParameter = 0, thirdParameter = 0){
-    let result =0;
-    let help = 0;
-    if (isNaN(+arguments[0])){
-        result = '';
-    }
-    for(let i=0; i < arguments.length; i++){
-        help = +arguments[i]
-        if (isNaN(+arguments[i])){
-            help = ' ' + arguments[i] + ' ';
-        }
-        result += help;
-    }   
-    return result;
-};
-console.log(sumOfThreeParameters(3,'2',4))
-console.log(sumOfThreeParameters(3,'два',4))
-console.log(sumOfThreeParameters(3,2,4))
-console.log(sumOfThreeParameters('3','2','4'))
-console.log(sumOfThreeParameters('3','два','4'))
-console.log(sumOfThreeParameters('один','два','три'))
+// function sumOfThreeParameters(firstParameter = 0, secondParameter = 0, thirdParameter = 0){
+//     let result =0;
+//     let help = 0;
+//     if (isNaN(+arguments[0])){
+//         result = '';
+//     }
+//     for(let i=0; i < arguments.length; i++){
+//         help = +arguments[i]
+//         if (isNaN(+arguments[i])){
+//             help = ' ' + arguments[i] + ' ';
+//         }
+//         result += help;
+//     }   
+//     return result;
+// };
+
 
 
 // function sumOfThreeParameters(firstParameter = 0, secondParameter = 0, thirdParameter = 0){
@@ -44,12 +39,20 @@ console.log(sumOfThreeParameters('один','два','три'))
 //     }   
 //     return result;
 // };
+
 // console.log(sumOfThreeParameters(3,'2',4))
 // console.log(sumOfThreeParameters(3,'два',4))
 // console.log(sumOfThreeParameters(3,2,4))
 // console.log(sumOfThreeParameters('3','2','4'))
 // console.log(sumOfThreeParameters('3','два','4'))
+// console.log(sumOfThreeParameters(3,'2'))
+// console.log(sumOfThreeParameters(3,'два'))
+// console.log(sumOfThreeParameters(3,4))
+// console.log(sumOfThreeParameters('3','4'))
+// console.log(sumOfThreeParameters('3','два'))
 // console.log(sumOfThreeParameters('один','два','три'))
+
+
 
 // function sumOfThreeStringParameters(firstParameter, secondParameter, thirdParameter){
 //     firstParameter = firstParameter.toLowerCase();
