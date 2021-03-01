@@ -54,7 +54,7 @@
 
 
 
-// function sumOfThreeStringParameters(firstParameter, secondParameter, thirdParameter){
+// function sumOfThreeStringParameters(firstParameter = '', secondParameter = '', thirdParameter = ''){
 //     firstParameter = firstParameter.toLowerCase();
 //     secondParameter = secondParameter.toLowerCase();
 //     thirdParameter = thirdParameter.toLowerCase();
@@ -79,17 +79,34 @@
 // console.log(sumOfThreeStringParameters('CCC', 'aaa', 'bbb'))
 // console.log(sumOfThreeStringParameters('CBA', 'ABC', 'BaC'))
 // console.log(sumOfThreeStringParameters('abc', 'cba', 'ccc'))
+// console.log(sumOfThreeStringParameters('CCC', 'bbb'))
+// console.log(sumOfThreeStringParameters('CBA', 'ABC'))
+// console.log(sumOfThreeStringParameters('abc', 'cba'))
 
 // function sumOfThreeStringParameters(firstParameter, secondParameter, thirdParameter){
+//     if(arguments.length == 3){
 //     let items = [firstParameter.toLowerCase(), secondParameter.toLowerCase(), thirdParameter.toLowerCase()];
 //     items.sort();
 //     return items [0] + ' ' + items [1] + ' ' + items [2];
+//     }
+//     if(arguments.length == 2){
+//         let items = [firstParameter.toLowerCase(), secondParameter.toLowerCase()];
+//         items.sort();
+//         return items [0] + ' ' + items [1];
+//     }
+//     if(arguments.length == 1){
+//         return firstParameter;
+//     }
 // }
 // console.log(sumOfThreeStringParameters('Abc', 'Cba', 'ccc'))
 // console.log(sumOfThreeStringParameters('abc', 'cBa', 'cBc'))
 // console.log(sumOfThreeStringParameters('CCC', 'aaa', 'bbb'))
 // console.log(sumOfThreeStringParameters('CBA', 'ABC', 'BaC'))
 // console.log(sumOfThreeStringParameters('abc', 'cba', 'ccc'))
+// console.log(sumOfThreeStringParameters('CCC', 'bbb'))
+// console.log(sumOfThreeStringParameters('CBA', 'ABC'))
+// console.log(sumOfThreeStringParameters('abc', 'cba'))
+// console.log(sumOfThreeStringParameters('abc'))
 
 // function letterSignature(nameOfUser){
 //     if(arguments.length === 0){
