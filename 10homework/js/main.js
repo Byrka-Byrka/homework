@@ -66,10 +66,6 @@ let userLogin = prompt ('enter your nickname', 'KIBORG_YBIJZA');
 
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 57e139d7f34c2afdf9b2d418c271f1fd7bc8721d
 // let firstNumber = Number (prompt('Enter first number'));
 // let secondNumber = Number (prompt('Enter second number'));
 // let thirdNumber = Number (prompt('Enter third number'));
@@ -83,7 +79,6 @@ let userLogin = prompt ('enter your nickname', 'KIBORG_YBIJZA');
 // (userAge >17)? alert('hello ' + nameOfUser) : alert('Goodbye ' + nameOfUser);
 
 
-<<<<<<< HEAD
 // let numberOfUser = prompt('enter a number from 0 to 9');
 // switch(numberOfUser){
 //     case '0':
@@ -123,7 +118,7 @@ let userLogin = prompt ('enter your nickname', 'KIBORG_YBIJZA');
 //             alert('wrong number');
 //         };
 // };
-=======
+
 let numberOfUser = prompt('enter a number from 0 to 9');
 switch(numberOfUser){
     case '0':
@@ -157,15 +152,10 @@ switch(numberOfUser){
         alert('nine');
         break;  
     default:
-<<<<<<< HEAD
     if (isNaN){
         alert('its not a number');
     } else{
         alert('неверное число');    
     };  
 }
-=======
-        alert('неверное число');     
-}
->>>>>>> 3842869551819b8c1e5074ae86e298914957d53c
->>>>>>> 57e139d7f34c2afdf9b2d418c271f1fd7bc8721d
+

@@ -2,7 +2,8 @@
 // let userData = prompt('Enter something');
 // alert(userData);
 
-<<<<<<< HEAD
+console.log('hello world!');
+
 let firstNumber = Number (prompt('Enter first number'));
 let secondNumber = Number (prompt('Enter second number'));
 let thirdNumber = Number (prompt('Enter third number'));
@@ -11,16 +12,6 @@ if(String(firstNumber + secondNumber + thirdNumber) == 'NaN') {
 } else {
     alert(firstNumber + secondNumber + thirdNumber);
 };
-=======
-// let firstNumber = Number (prompt('Enter first number'));
-// let secondNumber = Number (prompt('Enter second number'));
-// let thirdNumber = Number (prompt('Enter third number'));
-// if(String(firstNumber + secondNumber + thirdNumber) == 'NoN') {
-//     alert('NOT A NUMBER');
-// } else {
-//     alert(firstNumber + secondNumber + thirdNumber);
-// };
->>>>>>> 3842869551819b8c1e5074ae86e298914957d53c
 
 // let userName = prompt('Enter your name');
 // let userAge = prompt('Enter your age');
@@ -30,7 +21,6 @@ if(String(firstNumber + secondNumber + thirdNumber) == 'NaN') {
 //     alert('Sorry ' + userName + " access failed")
 // };
 
-<<<<<<< HEAD
 // let giveBlockName = confirm('Want to enter a block name?');
 // if (giveBlockName) {
 //     let blockName = prompt('Enter a block name');
@@ -50,34 +40,6 @@ if(String(firstNumber + secondNumber + thirdNumber) == 'NaN') {
 // } else {
 // confirm('the element is not assigned a class');
 // };
-=======
-let giveBlockName = confirm('Want to enter a block name?');
-if (giveBlockName) {
-    let blockName = prompt('Enter a block name');
-        let giveElementName = confirm('Want to enter a element name?');
-        if (giveElementName) {
-        let elementName = prompt('Enter a element name');
-            let giveModifierName = confirm('Want to enter a modifier name?');
-            if(giveModifierName) {
-                let modifierName = prompt('Enter a modifier name');
-                console.log(blockName + '__' + elementName + '_' + modifierName);
-            } else {
-                console.log(blockName + '__' + elementName);
-            };
-        } else {
-            let giveModifierName = confirm('Want to enter a modifier name?');
-            if(giveModifierName){
-                let modifierName = prompt('Enter a modifier name');
-                console.log(blockName + '_' + modifierName);
-            }else{
-                console.log (blockName);
-            };
-    
-        };
-} else {
-    confirm('the element is not assigned a class');
-};
->>>>>>> 996b9952a6c8b74daa95f50c7ed8c60b852442ac
 
 let theFirstNumber = Number(prompt('Enter first number'));
 let theSecondNumber = Number(prompt('Enter second number'));
