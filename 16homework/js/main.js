@@ -40,7 +40,11 @@ return result;
 
 let setDisplayDate = (obj) => {
     let date = new Date();
-    let displayDate = `${date.getDate()}, ${date.getMonth()}, ${date.getFullYear()}`;
+    let month = date.getMonth()
+    if (month < 10){
+        month = '0' + month;
+    }
+    let displayDate = `${date.getDate()}. ${month}. ${date.getFullYear()}`;
     if (!Array.isArray(obj)){
         obj.displayDate = displayDate;
     } else {
@@ -51,8 +55,8 @@ let setDisplayDate = (obj) => {
     return obj;
 }
 
-// console.log(setDisplayDate({}))
-// console.log(setDisplayDate([{}, {}]))
+console.log(setDisplayDate({}))
+console.log(setDisplayDate([{}, {}]))
 
 let getTimeBeforeAnniversary = (year, month, day) =>{
     month = month - 1;
@@ -69,5 +73,5 @@ let getTimeBeforeAnniversary = (year, month, day) =>{
  return `${Math.floor(resultDays/365)} years, ${Math.floor(resultDays%365)} days`
 }
 
-console.log(getTimeBeforeAnniversary(1991,5,23))
-console.log(getTimeBeforeAnniversary(1987, 3, 11))
+// console.log(getTimeBeforeAnniversary(1991,5,23))
+// console.log(getTimeBeforeAnniversary(1987, 3, 11))
