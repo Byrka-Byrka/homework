@@ -20,7 +20,7 @@ class Australopithecus {
         return false
         }return console.error('wrong instance !');
     }
-}
+};
 
 class AustralopithecusBuilder {
     setName(value) {
@@ -80,7 +80,7 @@ class Neoanthropes extends Australopithecus{
         console.log('try again!')
         return obj
     }
-}
+};
 
 class NeoanthropesBuilder {
     setName(value) {
@@ -103,7 +103,7 @@ class NeoanthropesBuilder {
 let dog = {
     legs: 4,
     mouth: 1
-}
+};
 
 const joh = new NeoanthropesBuilder()
 .setName('Joh')
@@ -114,7 +114,7 @@ console.log(joh)
 console.log(joh.domestication(dog))
 console.log(Neoanthropes.isAllive(joh))
 console.log(Australopithecus.isAllive(dog));
-joh.sayHello()
+joh.sayHello();
 
 class CroMagnon extends Neoanthropes{
     constructor(name, skills, brain) {
@@ -133,7 +133,7 @@ class CroMagnon extends Neoanthropes{
             return `${super.sayHello()}, my name ${this.name}` ; 
         } else {
             return console.error('instance is ded');
-        };
+        }
     }
 };
 
@@ -156,10 +156,56 @@ class CroMagnonBuilder {
 };
 
 const john = new CroMagnonBuilder()
-.setName('John Doe')
+.setName('John D')
 .setSkills(['articulate speech', 'social labor', 'domestication of plants and animals', 'rites'])
 .setBrain('1500g')
 .build()
 
 console.log(john)
 console.log(john.sayName())
+
+class  ModernMan extends Neoanthropes{
+    constructor(name, skills) {
+        super(name, skills)
+        super.brain = 750 + (Math.floor(Math.random() * 750) + 1)
+        super.age = Math.floor(Math.random() * 100) + 1;
+        super.maxAge = Math.floor(Math.random() * 100 + 1);
+    }
+    static isAllive (instance) {
+        if (instance instanceof Neoanthropes){
+        if (instance.age < instance.maxAge) return true;
+        return false;
+        }return console.error('wrong instance !');
+    }
+    sayName(){
+        if(CroMagnon.isAllive(this) && this.brain > 1100){
+            return `${super.sayHello()}, my name ${this.name}` ; 
+        } else if(this.brain < 1100){
+            return ('поп ит симпл димпл сквиш');
+        } else {
+            return console.error('instance is ded');
+        } 
+    }
+};
+
+class ModernManBuilder {
+    setName(value) {
+        this.name = value
+        return this
+    }
+    setSkills(value) {
+        this.skills = value
+        return this
+    }
+    build() {
+        return new ModernMan(this.name, this.skills)
+    }
+};
+
+const johnDoe = new ModernManBuilder()
+.setName('John Doe')
+.setSkills(['articulate speech', 'social labor', 'domestication of plants and animals', 'rites'])
+.build()
+
+console.log(johnDoe);
+console.log(johnDoe.sayName());
