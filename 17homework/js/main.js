@@ -11,9 +11,6 @@ class Australopithecus {
     get name() {
         return this._name;
     }
-    // set name(value){
-    //     this._name = value;
-    // }
     static isAllive (instance) {
         if (instance instanceof Australopithecus){
         if (instance.age < instance.maxAge) return true
@@ -40,19 +37,19 @@ class AustralopithecusBuilder {
     }
 };
 
-const aaa = new AustralopithecusBuilder()
+const austral = new AustralopithecusBuilder()
 .setName('aaa')
 .setSkills(['upright posture', 'primitive tools (sticks, stones, bones)', 'gregariousness'])
 .setBrain('500g')
 .build()
-console.log(aaa);
-console.log(Australopithecus.isAllive(aaa));
+console.log(austral);
+console.log(Australopithecus.isAllive(austral));
 
 class Neoanthropes extends Australopithecus{
     constructor(name, skills, brain) {
         super(name, skills, brain)
-        super.age = Math.floor(Math.random() * 50) + 1;
-        super.maxAge = Math.floor(Math.random() * 50) + 1;
+        this.age = Math.floor(Math.random() * 50) + 1;
+        this.maxAge = Math.floor(Math.random() * 50) + 1;
     }
     get name() {
         return this._name;
@@ -119,8 +116,8 @@ joh.sayHello();
 class CroMagnon extends Neoanthropes{
     constructor(name, skills, brain) {
         super(name, skills, brain)
-        super.age = Math.floor(Math.random() * 70) + 1;
-        super.maxAge = Math.floor(Math.random() * 70 + 1);
+        this.age = Math.floor(Math.random() * 70) + 1;
+        this.maxAge = Math.floor(Math.random() * 70 + 1);
     }
     static isAllive (instance) {
         if (instance instanceof Australopithecus){
@@ -168,8 +165,8 @@ class  ModernMan extends Neoanthropes{
     constructor(name, skills) {
         super(name, skills)
         super.brain = 750 + (Math.floor(Math.random() * 750) + 1)
-        super.age = Math.floor(Math.random() * 100) + 1;
-        super.maxAge = Math.floor(Math.random() * 100 + 1);
+        this.age = Math.floor(Math.random() * 100) + 1;
+        this.maxAge = Math.floor(Math.random() * 100 + 1);
     }
     static isAllive (instance) {
         if (instance instanceof Neoanthropes){
