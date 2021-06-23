@@ -148,12 +148,7 @@ const arrayOfPersons = [
                 elem.nationality = 'www.leningrad'
             }
             let div = document.createElement('div')
-            let character = {
-                name: 'unknown',
-                surname: 'unknown',
-                age: 'unknown',
-                nationality: 'unknown',
-            }
+
             div.style.cssText = `
             border: solid black 2px;
             margin: 10px;
