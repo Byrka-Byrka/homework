@@ -24,22 +24,25 @@ let inpCreator = (id, tagName, value, labelValue, inpType, appendTo, name) =>{
         label.htmlFor = id;
         label.innerText = labelValue;
         label.style.cssText = `
-        width: 39%;
+        min-width: 39%;
+        max-width: 100%;
     `
         div.append(label);
     }
     appendTo.append(div)
     
 };
-
+let formWrapper = document.createElement('div');
+formWrapper.classList.add('form-wrapper');
+document.body.append(formWrapper);
 let createForm = document.createElement('form');
 createForm.id = 'createForm';
 let searchForm = document.createElement('form');
 searchForm.id = 'searchForm';
 let productDisplay = document.createElement('div');
 productDisplay.id = 'productDisplay';
-document.body.append(createForm);
-document.body.append(searchForm);
+formWrapper.append(createForm);
+formWrapper.append(searchForm);
 document.body.append(productDisplay);
 
 createForm.classList.add('form');
@@ -74,6 +77,7 @@ inpCreator('createFormPremium', 'input', '', 'Premium', 'radio', priceFieldset, 
 inpCreator('createFormPicture', 'input', '', 'Picture', 'url', secInfoFieldset)
 let createFormDescr = document.createElement('textarea');
 createFormDescr.id = 'createFormDescr';
+createFormDescr.classList.add('create-form__descr')
 let labelForDescr = document.createElement('label');
 labelForDescr.htmlFor = createFormDescr;
 labelForDescr.innerText = 'Description';
