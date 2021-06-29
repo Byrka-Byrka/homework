@@ -24,9 +24,13 @@
     min-width: 400px;
     max-width: 1080px;
     min-height: 500px;
-    max-height: 1000px;
+    max-height: 3000px;
     background: rgba(86, 115, 209, 0.582);
     border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items:inherit;
 }
 .create-form__descr-wrapper{
     margin: 10px;
@@ -40,18 +44,11 @@
     height: 70px;
     width: 100%;
 }
-.products-container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 10px;
-
-}
 .product-display__product{
     width: 250px;
-    height: 250px;
+    height: 280px;
     background:rgba(86, 160, 209, 0.582);
-
+    margin-top: 10px;
 }
 .product__img-wrapper{
     width: 100%;
@@ -75,5 +72,76 @@
     align-items: center;
 }
 .edit-block__last-one{
+    width:80%;
+    height: 45%;
+    background: red;
+    text-align: center;
+}
+.product_descr-visibility{
+    visibility: hidden;
+}
+.product_descr{
+    resize: none;
+    width:90%;
+    background: rgba(86, 160, 209, 0.582);
+    height: 51px
+}
+.edit-popup__container{
+    width: 100vw;
+    height:100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right:0;
+    left: 0;
+    background: rgba(52, 75, 78, 0.418);
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+.edit-popup{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 400px;
+    align-items: flex-end;
+    justify-content:space-around;
+    position: fixed;
+    top: 200px;
+    left: 40%;
+    border: double 2px gray;
+    background-color: khaki;
+}
+.popup__label{
+    width: 100%;
+    display: flex;
+    text-align: start;
+    justify-content: space-around;
+}
+.label__text-container{
+    width: 40%;
+}
+.popup__btn-wrapper{
+    width:100%;
+    display: flex;
+    justify-content: space-around;
+}
+.err{
+    height: 15px;
+    color: red;
+    font-weight: 100;
+    font-size: 11px;
+    min-width:200px;
+    max-width: 500px;
     
 }
+.product_cheap{
+    border: solid gray 4px;
+}
+.product_optimal{
+    border: solid green 4px;
+}
+.product_premium{
+    border: solid gold 4px;
+}
+
