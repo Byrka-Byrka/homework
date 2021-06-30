@@ -150,7 +150,7 @@ let product = {
     price: null,
     creationDate: 'none',
     priceSegment: 'cheap',
-    picture: 'https://icdn.lenta.ru/images/2021/04/27/16/20210427163138131/square_320_c09ebae17387b7d6eeb9fa0d42afe5ee.jpg',
+    picture: 'https://opencartforum.com/storage/attachment/monthly_2020_06/no-img.png.056bf2e130881dec0f753ea5d0228c26.png',
     description: null
 
 }
@@ -268,7 +268,6 @@ let err = document.createElement('div')
 err.classList.add('err')
 
 createFormName.addEventListener('change', (event) => {
-    console.log(event.target.value);
     product.name = event.target.value;
     if(event.target.value.length<5){
         nameErr.style.visibility = ''
@@ -280,10 +279,7 @@ createFormName.addEventListener('change', (event) => {
 })
 
 createFormDate.addEventListener('change', (event) => {
-    console.log(event.target.value)
-    console.log(event.target.value.length)
     product.creationDate = event.target.value;
-    console.log(event.target.value.length)
     if (event.target.value.length < 10){
         dateErr.style.visibility = ''
     }
@@ -297,13 +293,9 @@ let isEng = function (text) {
         return /[a-z]/i.test(text)
 };
 createFormArticle.addEventListener('change', (event) => {
-    console.log(event.target.value)
     product.article = event.target.value;
     let articleArr = event.target.value.split('')
-    console.log(!isEng(articleArr[0]))
-
     let articleNumbers = articleArr.filter(item=> +item || +item == 0)
-    console.log(articleNumbers)
     if (!isEng(articleArr[0]) || articleArr[0] != articleArr[0].toUpperCase() || articleNumbers.length < 2){
         articleErr.style.visibility = ''
     }
@@ -313,8 +305,6 @@ createFormArticle.addEventListener('change', (event) => {
     }
 })
 createFormCount.addEventListener('change', (event) => {
-    console.log(!Number.isInteger(+event.target.value))
-    console.log(event.target.value)
     product.count = event.target.value;
 
     if(!Number.isInteger(+event.target.value) || +event.target.value || event.target.value <= 0){
@@ -326,7 +316,6 @@ createFormCount.addEventListener('change', (event) => {
     }
 })
 createFormPrice.addEventListener('change', (event) => {
-    console.log(event.target.value)
     product.price = event.target.value;
     if(!+event.target.value){
         priceErr.style.visibility = ''
@@ -341,18 +330,15 @@ let priceBtnCollection = document.getElementsByName('create-form__radio')
 priceBtnCollection.forEach(elem => {
     elem.addEventListener('change', event =>{
        product.priceSegment = event.target.value;
-       console.log(event.target.value)
     });   
 })
 priceBtnCollection[0].setAttribute('checked', 'true')
 
 createFormPicture.addEventListener('change', (event) => {
-    console.log(event.target.value)
     product.picture = event.target.value;
 })
 
 createFormDescr.addEventListener('change', (event) => {
-    console.log(event.target.value)
     product.description = event.target.value;
 })
 
@@ -407,9 +393,7 @@ const productRender = ((model = productArr)=>{
         let liPrice = document.createElement('li');
         liPrice.innerText = `Price: ${elem.price}`;
         let liCreationDate = document.createElement('li');
-        console.log(elem.creationDate)
         liCreationDate.innerText = `Date: ${elem.creationDate.split('-').reverse().join('.')}`;
-        console.log(elem.creationDate.split('.').reverse().join('.'))
 
         let descrDiv = document.createElement('textarea')
         descrDiv.innerText = `${elem.description}`
@@ -439,22 +423,14 @@ const productRender = ((model = productArr)=>{
             ul.append(descrDiv);
         }
 
-                editBlockBtn.onclick = (event) =>{
-            // event.preventDefault();
-        
-            console.log(index)
-        
+        editBlockBtn.onclick = (event) =>{
             const popContainer = document.createElement('div');
             popContainer.id = 'popupContainer'
             popContainer.classList.add('edit-popup__container');
             const popup = document.createElement('div');
             popup.id = 'popup'
             popup.classList.add('edit-popup');
-                    console.log(elem)
-
                     inpCreator('editName', 'input', elem.name, 'Name', 'text', popup)
-
-
                     inpCreator('editArticle', 'input', elem.article, 'Article', 'text', popup)
                     inpCreator('editPrice', 'input', elem.price, 'Price', 'number', popup)
                     inpCreator('editCount', 'input', elem.count, 'Count', 'number', popup)
@@ -503,11 +479,8 @@ const productRender = ((model = productArr)=>{
                 }
             })
             editArticle.addEventListener('change', (event) => {
-                console.log(event.target.value)
                 valuesToChange.article = event.target.value;
                 let articleArr = event.target.value.split('')
-                console.log(!isEng(articleArr[0]))
-            
                 let articleNumbers = articleArr.filter(item=> +item || +item == 0)
                 if (!isEng(articleArr[0]) || articleArr[0] != articleArr[0].toUpperCase() || articleNumbers.length < 2){
                     productEditValidity.article = false;
@@ -546,24 +519,18 @@ const productRender = ((model = productArr)=>{
                 let editValidityArr = Object.values(productEditValidity);
                 if(productEditValidity.name != true){
                     nameErr.style.visibility = ''
-                    console.log('nameErr')
                 }
                 if(productEditValidity.article != true){
                     articleErr.style.visibility = ''
-                    console.log('articleErr')
                 }
                 if(productEditValidity.count != true){
                     countErr.style.visibility = ''
-                    console.log('countErr')
                 }
                 if(productEditValidity.price != true){
                     priceErr.style.visibility = ''
-                    console.log('priceErr')
                 }
-                console.log(editValidityArr)
                 if(!editValidityArr.includes(false)){
                     for(let key in valuesToChange){
-                        console.log(elem.i)
                         elem[key] = valuesToChange[key]
 
                     }
@@ -595,23 +562,18 @@ submitBtn.addEventListener('click', (event)=>{
     let validityArr = Object.values(productValidity);
     if(productValidity.date != true){
         dateErr.style.visibility = ''
-        console.log('dateErr')
     }
     if(productValidity.name != true){
         nameErr.style.visibility = ''
-        console.log('nameErr')
     }
     if(productValidity.article != true){
         articleErr.style.visibility = ''
-        console.log('articleErr')
     }
     if(productValidity.count != true){
         countErr.style.visibility = ''
-        console.log('countErr')
     }
     if(productValidity.price != true){
         priceErr.style.visibility = ''
-        console.log('priceErr')
     }
     if(!validityArr.includes(false)){
         productArr.push(product) 
@@ -641,11 +603,9 @@ let searchCriteria = {
     sortedBy: 'alphabet'
 }
 let searchBtnsArr = [...searchForm.getElementsByTagName('input')]
-console.log(searchBtnsArr)
 searchBtnsArr.forEach(item =>{
     item.addEventListener('input', (event) => {
         let searchArr = productArr;
-        console.log(event.target.id)
         if(event.target.id == 'searchFormSearch'){
             searchCriteria.substr = event.target.value
         }
@@ -679,7 +639,6 @@ searchBtnsArr.forEach(item =>{
         if(event.target.id == 'searchFormDate') searchCriteria.sortedBy = 'date'
 
         // let searchArr = productArr;
-        console.log(searchArr)
        if(searchCriteria.substr){
         searchArr = searchArr.reduce((accum,current)=>{
             if(current.name.toLocaleLowerCase().includes(searchCriteria.substr.toLocaleLowerCase())){
@@ -690,30 +649,22 @@ searchBtnsArr.forEach(item =>{
             }
         },[])
        }
-        console.log(searchArr)
         if (searchCriteria.priceSegment.cheap || searchCriteria.priceSegment.optimal || searchCriteria.priceSegment.premium){
-            console.log('pricesort')
-            console.log(searchArr)
             searchArr = searchArr.reduce((accum,current)=>{
                 if(searchCriteria.priceSegment.cheap && current.priceSegment.includes('cheap')){
                     accum = [...accum, current]
-                    console.log(accum)
                 } 
                 else if (searchCriteria.priceSegment.optimal && current.priceSegment.includes('optimal')){
                     accum = [...accum, current]
-                    console.log(accum)
                 }
                 else if (searchCriteria.priceSegment.premium && current.priceSegment.includes('premium')){
                     accum = [...accum, current]
-                    console.log(accum)
                 }
-                console.log(accum)
                 return accum;
                 
             },[])
         }
         if(searchCriteria.sortedBy){
-            console.log(searchArr)
             if(searchCriteria.sortedBy == 'alphabet'){
                 searchArr.sort((a,b)=>{
                     if(a.name.toLocaleLowerCase() < b.name.toLocaleLowerCase())return -1;
@@ -745,21 +696,3 @@ searchBtnsArr.forEach(item =>{
     productRender(searchArr);
     })
 })
-
-// searchFormCheap.addEventListener('change', (event) => {
-//     console.log(event.target.checked)
-//     searchArr = productArr;
-//     if(event.target.checked){
-        // searchArr = searchArr.reduce((accum,current)=>{
-        //     if(current.priceSegment.includes('cheap')){
-        //         return [...accum, current]
-        //     } else{
-        //         return accum;
-        //     }
-        // },[])
-//     }
-//     productDisplay.innerHTML = '';
-//     productRender(searchArr);
-// })
-// searchFormOptimal
-// searchFormPremium
