@@ -65,11 +65,13 @@ createFormSubmit.innerText = 'submit'
 createFormSubmit.id = 'submitBtn'
 createForm.append(createFormSubmit);
 
-// (id, tagName, value, labelValue, inpType, appendTo)
+
 inpCreator('createFormName', 'input', '', 'Name', 'text', infoFieldset)
 inpCreator('createFormArticle', 'input', '', 'Article', 'text', infoFieldset)
 inpCreator('createFormCount', 'input', '', 'Count', 'number', infoFieldset)
+createFormCount.setAttribute('min', 1)
 inpCreator('createFormPrice', 'input', '', 'Price', 'number', infoFieldset)
+createFormPrice.setAttribute('min', 1)
 inpCreator('createFormDate', 'input', '', 'Creation date', 'date', infoFieldset)
 
 let nameErr = document.createElement('div')
@@ -90,13 +92,13 @@ countErr.id = 'countErr';
 countErr.innerText = 'count must not contain text characters, must not be fractional and must have a value less than one';
 countErr.style.visibility = 'hidden'
 createFormCount.parentElement.append(countErr)
-let priceErr = document.createElement('div')
-priceErr.classList.add('err')
+let priceErr = document.createElement('div');
+priceErr.classList.add('err');
 priceErr.id = 'priceErr';
 priceErr.innerText = 'Price must not contain text characters';
-priceErr.style.visibility = 'hidden'
-createFormPrice.parentElement.append(priceErr)
-let dateErr = document.createElement('dateErr')
+priceErr.style.visibility = 'hidden';
+createFormPrice.parentElement.append(priceErr);
+let dateErr = document.createElement('dateErr');
 dateErr.classList.add('err')
 dateErr.id = 'dateErr';
 dateErr.innerText = 'Enter this value!';
@@ -120,7 +122,6 @@ createFormDescrWrapper.classList.add('create-form__descr-wrapper');
 createFormDescrWrapper.append(labelForDescr);
 createFormDescrWrapper.append(createFormDescr);
 secInfoFieldset.append(createFormDescrWrapper);
-// inpCreator('createFormDescr', 'textarea', '', 'Description', '', secInfoFieldset)
 
 let searchFieldset = document.createElement('fieldset');
 searchFieldset.innerHTML = '<legend>Search</legend>';
@@ -165,7 +166,7 @@ let productValidity ={
 let productArr = [
     {
         name: 'byrka',
-        article: 'Brk',
+        article: 'B456',
         count: 1,
         price: 999,
         creationDate: '1996-05-23',
@@ -176,7 +177,7 @@ let productArr = [
     },
     {
         name: 'byrka',
-        article: 'Brk',
+        article: 'B646',
         count: 1,
         price: 999,
         creationDate: '1996-05-23',
@@ -187,7 +188,7 @@ let productArr = [
     },
     {
         name: 'ayrka',
-        article: 'Brk',
+        article: 'Bz535sr',
         count: 3,
         price: 999,
         creationDate: '1996-05-23',
@@ -384,21 +385,23 @@ const productRender = ((model = productArr)=>{
 
 
         let ul = document.createElement('ul');
+        ul.classList.add('product__ul')
         let liName = document.createElement('li');
-        liName.innerText = `${elem.name}`;
+        liName.innerHTML = `<span>${elem.name}</span>`;
         let liArticle = document.createElement('li');
-        liArticle.innerText = `Article: ${elem.article}`;
+        liArticle.innerHTML = `<span>Article:</span> ${elem.article}`;
         let liCount = document.createElement('li');
-        liCount.innerText = `Count: ${elem.count}`;
+        liCount.innerHTML = `<span>Count:</span> ${elem.count}`;
         let liPrice = document.createElement('li');
-        liPrice.innerText = `Price: ${elem.price}`;
+        liPrice.innerHTML = `<span>Price:</span> ${elem.price}`;
         let liCreationDate = document.createElement('li');
-        liCreationDate.innerText = `Date: ${elem.creationDate.split('-').reverse().join('.')}`;
+        liCreationDate.innerHTML = `<span>Date:</span> ${elem.creationDate.split('-').reverse().join('.')}`;
 
         let descrDiv = document.createElement('textarea')
         descrDiv.innerText = `${elem.description}`
         descrDiv.classList.add('product_descr')
         descrDiv.classList.add('product_descr-visibility')
+        descrDiv.setAttribute('readonly', 'true')
 
         ul.append(liName);
         ul.append(liPrice);
@@ -409,7 +412,7 @@ const productRender = ((model = productArr)=>{
 
         if(elem.description){
             let liDescr = document.createElement('li')
-            liDescr.innerText = 'Description:'
+            liDescr.innerHTML = '<span>Description:</span>'
             liDescr.addEventListener('mouseover', (event)=>{
                 liDescr.style.color = 'red'
             })
@@ -427,7 +430,7 @@ const productRender = ((model = productArr)=>{
             const popContainer = document.createElement('div');
             popContainer.id = 'popupContainer'
             popContainer.classList.add('edit-popup__container');
-            const popup = document.createElement('div');
+            const popup = document.createElement('form');
             popup.id = 'popup'
             popup.classList.add('edit-popup');
                     inpCreator('editName', 'input', elem.name, 'Name', 'text', popup)
@@ -458,6 +461,8 @@ const productRender = ((model = productArr)=>{
             editArticle.parentElement.append(articleErr)
             editCount.parentElement.append(countErr)
             editPrice.parentElement.append(priceErr)
+            editPrice.setAttribute('min', 1)
+            editCount.setAttribute('min', 1)
             let productEditValidity = {
                 name: true,
                 article: true,
@@ -514,6 +519,21 @@ const productRender = ((model = productArr)=>{
                     productEditValidity.price = true;
                 }
             })
+            editPicture.addEventListener('change', (event) => {
+                valuesToChange.picture = event.target.value;
+                try {
+                    event.target.value.onload()
+                }
+                catch{
+                    valuesToChange.picture = 'https://opencartforum.com/storage/attachment/monthly_2020_06/no-img.png.056bf2e130881dec0f753ea5d0228c26.png'
+                }
+                if(!editPicture.checkValidity()){
+
+                } 
+                if (editPicture.checkValidity()){
+                    valuesToChange.picture = event.target.value;
+                }
+            })
             confirmBtn.addEventListener('click', (event)=>{
                 event.preventDefault();
                 let editValidityArr = Object.values(productEditValidity);
@@ -535,17 +555,20 @@ const productRender = ((model = productArr)=>{
 
                     }
                     productDisplay.innerHTML = '';
+                    popup.reset()
                     popContainer.remove()
                     productRender();
                 }
             
             })
             declineBtn.addEventListener('click', (event)=>{
+                popup.reset()
                 popContainer.remove()
             })
             deletProductBtn.addEventListener('click', (event)=>{
                 productArr.splice(index,1);
                 productDisplay.innerHTML = '';
+                popup.reset()
                 popContainer.remove()
                 productRender();
             })
@@ -638,7 +661,6 @@ searchBtnsArr.forEach(item =>{
         if(event.target.id == 'searchFormCount') searchCriteria.sortedBy = 'count'
         if(event.target.id == 'searchFormDate') searchCriteria.sortedBy = 'date'
 
-        // let searchArr = productArr;
        if(searchCriteria.substr){
         searchArr = searchArr.reduce((accum,current)=>{
             if(current.name.toLocaleLowerCase().includes(searchCriteria.substr.toLocaleLowerCase())){
