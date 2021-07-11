@@ -181,6 +181,7 @@ const arrayOfPersons = [
     addCharacter(arrayOfPersons, mainContainer);
 
     let form = document.createElement('form');
+    form.id = 'creationForm';
     document.body.append(form);
     let fieldset = document.createElement('fieldset');
     fieldset.innerHTML = '<legend>Creation section</legend>'
@@ -193,10 +194,13 @@ const arrayOfPersons = [
     `
 
 
-    let elementCreator = (id, tagName, value, labelValue, inpType) =>{
+    let elementCreator = (id, tagName, value, labelValue, inpType, name) =>{
         let elem = document.createElement(tagName);
         elem.value = value;
         elem.id = id;
+        if(name){
+            elem.setAttribute('name', `${name}`)
+        }
         if(inpType){
             elem.setAttribute('type', inpType);
         }
@@ -227,7 +231,10 @@ const arrayOfPersons = [
     elementCreator('emailInp', 'input', '', 'email', 'email');
     elementCreator('passwordInp', 'input', '', 'password', 'password');
     elementCreator('iReadInp', 'input', '', 'I have read the user agreement', "checkbox");
-    
+    nameInp.setAttribute('required', 'true')
+    emailInp.setAttribute('required', 'true')
+    passwordInp.setAttribute('required', 'true')
+    iReadInp.setAttribute('required', 'true')
     let textArea = document.createElement('textarea');
     textArea.setAttribute('placeholder', 'for wishes to developers');
     textArea.style.cssText =`
@@ -237,7 +244,12 @@ const arrayOfPersons = [
     fieldset.append(textArea);
 
 
-    elementCreator('freeRadio', 'input', '', 'free account', 'radio');
-    elementCreator('costRadio', 'input', '', '3month fo 2.99$', 'radio');
+    elementCreator('freeRadio', 'input', '', 'free account', 'radio', 'accType');
+    elementCreator('costRadio', 'input', '', '3month fo 2.99$', 'radio', 'accType');
     elementCreator('submitBtn', 'button', '', '', 'submit');
     submitBtn.innerText = 'submit'
+
+    creationForm.addEventListener('submit', event =>{
+        console.log('form sent successfully')
+        // event.preventDefault()
+    })
