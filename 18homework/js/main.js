@@ -251,5 +251,5 @@ const arrayOfPersons = [
 
     creationForm.addEventListener('submit', event =>{
         console.log('form sent successfully')
-        // event.preventDefault()
+        event.preventDefault()
     })
